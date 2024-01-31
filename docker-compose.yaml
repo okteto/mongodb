@@ -3,9 +3,9 @@ services:
     image: docker.io/bitnami/mongodb:5.0
     environment:
       - MONGODB_USERNAME=okteto
-      - MONGODB_PASSWORD=${MONGODB_PASSWORD:-change-me!}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD:-password}
       - MONGODB_DATABASE=okteto
-      - MONGODB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD:-change-me!}
+      - MONGODB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD:-password}
       - MONGODB_SYSTEM_LOG_VERBOSITY=0
       - MONGODB_DISABLE_SYSTEM_LOG=no
       - MONGODB_ENABLE_IPV6=no
