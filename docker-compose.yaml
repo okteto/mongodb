@@ -1,6 +1,6 @@
 services:
   mongodb:
-    image: docker.io/bitnami/mongodb:5.0
+    image: zcube/bitnami-compat-mongodb:6.0.5
     environment:
       - MONGODB_USERNAME=okteto
       - MONGODB_PASSWORD=${MONGODB_PASSWORD:-password}
