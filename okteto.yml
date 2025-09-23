@@ -3,4 +3,4 @@ deploy:
   compose: docker-compose.yaml
 
 destroy:
-  - okteto compose down
+  - docker compose down
