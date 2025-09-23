@@ -1,6 +1,3 @@
 name: mongodb-with-compose
 deploy:
   compose: docker-compose.yaml
-
-destroy:
-  - docker compose down
