@@ -3,12 +3,16 @@ services:
     image: mongo:7.0.14
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD:-password}
-      - MONGO_INITDB_DATABASE=okteto
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=okteto   
+      - MONGO_INITDB_NONROOT_USERNAME=okteto
+      - MONGO_INITDB_NONROOT_PASSWORD=password
+      
     ports:
       - 27017
     volumes:
       - data:/data/db
+      - init.js:/docker-entrypoint-initdb.d/init.js
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]

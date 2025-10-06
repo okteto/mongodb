@@ -40,6 +40,8 @@ You can configure these using [Admin Variables](https://www.okteto.com/docs/admi
 The MongoDB instance is configured with:
 - **Root Username**: `root`
 - **Default Database**: `okteto`
+- **Non-Root Username**: `okteto`
+- **Default Database**: `okteto`
 - **Port**: `27017`
 
 ### Health Monitoring
