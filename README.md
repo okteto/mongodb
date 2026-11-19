@@ -4,7 +4,7 @@ This is a modernized MongoDB deployment using the official MongoDB Docker image 
 
 ## Features
 
-- **Official MongoDB 7.0.14** - Updated from Bitnami-compatible image to official MongoDB image
+- **Official MongoDB 8.0** - Uses the official MongoDB image
 - **Health Checks** - Integrated health monitoring for better reliability
 - **Security Improvements** - Updated to latest stable version with security patches
 - **Standard Volume Paths** - Using official MongoDB data directory `/data/db`
@@ -31,7 +31,7 @@ Expected output:
 
 Set the following environment variables to configure the MongoDB database:
 
-- `MONGODB_ROOT_PASSWORD` - Root password for MongoDB (default: password)
+- `MONGODB_PASSWORD` - Password of the `okteto` user (default: password)
 
 You can configure these using [Admin Variables](https://www.okteto.com/docs/admin/dashboard/#variables).
 
@@ -43,6 +43,10 @@ The MongoDB instance is configured with:
 - **Non-Root Username**: `okteto`
 - **Default Database**: `okteto`
 - **Port**: `27017`
+
+### Connection String
+
+The `deploy` section of `okteto.yml` exports the connection string of the `okteto` user as `MONGODB_URL` in `$OKTETO_ENV`. When another Okteto Manifest deploys this repository as a dependency named `mongodb`, it reads the connection string as `${OKTETO_DEPENDENCY_MONGODB_VARIABLE_MONGODB_URL}`.
 
 ### Health Monitoring
 

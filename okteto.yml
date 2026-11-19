@@ -1,0 +1,5 @@
+deploy:
+  commands:
+    - name: Share the connection string
+      command: echo "MONGODB_URL=mongodb://okteto:${MONGODB_PASSWORD:-password}@mongodb:27017/okteto" >> $OKTETO_ENV
+  compose: docker-compose.yaml
